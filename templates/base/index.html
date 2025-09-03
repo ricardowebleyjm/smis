@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Academy - Student Portal Login</title>
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .pattern-bg {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.2) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .logo-container {
+            transition: transform 0.3s ease;
+        }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .feature-item {
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateX(10px);
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        .btn-primary:active {
+            transform: translateY(0px);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen relative overflow-hidden">
+    
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 pattern-bg opacity-10"></div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full animate-float"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-white/5 rounded-full animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-white/5 rounded-full animate-float" style="animation-delay: 4s;"></div>
+
+    <div class="relative z-10 min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Section - Branding & Features -->
+            <div class="text-white space-y-8 lg:pr-8">
+                <!-- Logo & Brand -->
+                <div class="text-center lg:text-center">
+                    <div class="logo-container inline-flex items-center justify-center w-32 h-32 lg:w-40 lg:h-40 glass-effect rounded-full mb-8 border border-white/20">
+                        <div class="w-28 h-28 lg:w-36 lg:h-36 bg-white rounded-full flex items-center justify-center p-3 shadow-2xl">
+                            <img src="https://genesisacademy.edu.jm/wp-content/uploads/2022/06/genesis-academy-logo-transparent.png" 
+                                 alt="Genesis Academy Logo" 
+                                 class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                        Genesis Academy
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-blue-100 font-light italic leading-relaxed">
+                        "Educating the mind without the heart is no education at all"
+                    </p>
+                </div>
+
+                <!-- Features - Desktop Only -->
+                <div class="space-y-8 hidden lg:block">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Secure & Reliable Platform</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="feature-item flex items-center space-x-6 p-4 glass-effect rounded-xl border border-white/10">
+                            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="check-circle" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">24/7 Access to Your Data</h4>
+                                <p class="text-blue-100 text-sm">Access your academic information anytime, anywhere</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item flex items-center space-x-6 p-4 glass-effect rounded-xl border border-white/10">
+                            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Track Academic Progress</h4>
+                                <p class="text-blue-100 text-sm">Monitor your grades and academic achievements</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item flex items-center space-x-6 p-4 glass-effect rounded-xl border border-white/10">
+                            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="users" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Connect with Community</h4>
+                                <p class="text-blue-100 text-sm">Engage with peers and faculty members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section - Login Form -->
+            <div class="w-full max-w-md mx-auto lg:ml-auto">
+                <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-gray-100">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">Welcome Back</h2>
+                        <p class="text-gray-600 text-lg">Sign in to your student portal</p>
+                    </div>
+
+                    <!-- Django Form -->
+                    <!-- Replace action and method as needed for your Django view -->
+                    <form action="#" method="POST" class="space-y-6">
+                        {% csrf_token %}
+                        
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-semibold text-gray-700">
+                                Email Address
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <i data-lucide="mail" class="w-5 h-5 text-gray-400"></i>
+                                </div>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       class="form-input bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 pr-4 py-4 transition-all duration-200" 
+                                       placeholder="Enter your email address"
+                                       required>
+                            </div>
+                            <!-- Django Error Display -->
+                            {% if form.email.errors %}
+                                <div class="mt-2 text-sm text-red-600">
+                                    {{ form.email.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Password Field -->
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-semibold text-gray-700">
+                                Password
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <i data-lucide="lock" class="w-5 h-5 text-gray-400"></i>
+                                </div>
+                                <input type="password" 
+                                       id="password" 
+                                       name="password" 
+                                       class="form-input bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 pr-12 py-4 transition-all duration-200" 
+                                       placeholder="Enter your password"
+                                       required>
+                                <button type="button" 
+                                        class="absolute inset-y-0 right-0 flex items-center pr-3 password-toggle"
+                                        onclick="togglePassword()">
+                                    <i data-lucide="eye" class="w-5 h-5 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"></i>
+                                </button>
+                            </div>
+                            <!-- Django Error Display -->
+                            {% if form.password.errors %}
+                                <div class="mt-2 text-sm text-red-600">
+                                    {{ form.password.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember" 
+                                       name="remember" 
+                                       type="checkbox" 
+                                       class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
+                                <label for="remember" class="ml-2 text-sm text-gray-700 font-medium">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" 
+                               class="text-sm text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 hover:underline">
+                                Forgot your password?
+                            </a>
+                        </div>
+
+                        <!-- Django Non-field Errors -->
+                        {% if form.non_field_errors %}
+                            <div class="p-4 mb-4 text-sm text-red-700 bg-red-50 rounded-xl border border-red-200">
+                                {{ form.non_field_errors.0 }}
+                            </div>
+                        {% endif %}
+
+                        <!-- Sign In Button -->
+                        <button type="submit" 
+                                class="btn-primary w-full text-white font-semibold py-4 px-6 rounded-xl text-lg shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all duration-200">
+                            <span class="button-text">Sign In</span>
+                            <span class="loading-spinner hidden">
+                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Signing in...
+                            </span>
+                        </button>
+                    </form>
+
+                    <!-- Support Link -->
+                    <div class="text-center mt-8 pt-6 border-t border-gray-200">
+                        <p class="text-gray-600 text-sm">
+                            Need help? 
+                            <a href="mailto:support@genesisacademy.edu.jm" 
+                               class="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 hover:underline">
+                                Contact IT Support
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Features Bottom Bar -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 glass-effect border-t border-white/20 p-4">
+        <div class="flex justify-center space-x-8 text-white text-sm">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <span>Secure</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+                <span>24/7 Access</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                <span>Community</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Password toggle functionality
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleButton = document.querySelector('.password-toggle i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleButton.setAttribute('data-lucide', 'eye-off');
+            } else {
+                passwordInput.type = 'password';
+                toggleButton.setAttribute('data-lucide', 'eye');
+            }
+            
+            lucide.createIcons();
+        }
+
+        // Form submission with loading state
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const button = this.querySelector('button[type="submit"]');
+            const buttonText = button.querySelector('.button-text');
+            const loadingSpinner = button.querySelector('.loading-spinner');
+            
+            button.disabled = true;
+            buttonText.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+        });
+
+        // Add floating animation to logo on load
+        window.addEventListener('load', function() {
+            document.querySelector('.logo-container').style.animation = 'float 6s ease-in-out infinite';
+        });
+    </script>
+</body>
+</html>

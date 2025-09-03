@@ -1,0 +1,28 @@
+# Python/Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+*.env
+
+# Node / Tailwind / Flowbite
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+theme/static_src/build/  # if your build outputs here
+
+# Git & Docker
+.git/
+.dockerignore
+Dockerfile
+docker-compose.override.yml
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
